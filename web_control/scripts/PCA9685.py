@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import time
 import math
 import smbus
@@ -78,7 +76,7 @@ class PCA9685:
 	  
   def setServoPulse(self, channel, pulse):
     "Sets the Servo Pulse,The PWM frequency must be 50HZ"
-    pulse = pulse*4096/20000        #PWM frequency is 50HZ,the period is 20000us
+    pulse = int(pulse*4096/20000)        #PWM frequency is 50HZ,the period is 20000us
     self.setPWM(channel, 0, pulse)
 
 if __name__=='__main__':
@@ -93,4 +91,4 @@ if __name__=='__main__':
     
     for i in range(2500,500,-10):
       pwm.setServoPulse(0,i) 
-      time.sleep(0.02)  
+      time.sleep(0.02)
