@@ -95,39 +95,30 @@ def cmd():
         HStep = 0
         VStep = 0
         Ab.stop()
-        print("stop")
     elif code == "forward":
         Ab.forward()
         linear_x = last_vel / 100.0
         angular_z = 0.0
-        print("forward")
     elif code == "backward":
         Ab.backward()
         linear_x = -last_vel / 100.0
         angular_z = 0.0
-        print("backward")
     elif code == "turnleft":
         Ab.left()
         linear_x = 0.0
         angular_z = (10.0 / 100.0) / (diameter/2)
-        print("turnleft")
     elif code == "turnright":
         Ab.right()
         linear_x = 0.0
         angular_z = -(10.0 / 100.0) / (diameter/2)
-        print("turnright")
     elif code == "up":
         VStep = -5
-        print("up")
     elif code == "down":
         VStep = 5
-        print("down")
     elif code == "left":
         HStep = 5
-        print("left")
     elif code == "right":
         HStep = -5
-        print("right")
     return "OK"
 	
 def timerfunc():
