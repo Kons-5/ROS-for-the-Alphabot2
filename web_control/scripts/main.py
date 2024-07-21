@@ -89,7 +89,6 @@ def cmd():
         Ab.setPWMA(float(speed))
         Ab.setPWMB(float(speed))
         last_vel = float(speed)
-        print(speed)
     if code == "stop":
         linear_x = 0.0
         angular_z = 0.0
