@@ -4,8 +4,6 @@ import rospy
 from geometry_msgs.msg import TwistStamped
 from web_control.msg import Float64Stamped
 from bottle import get,post,run,route,request,template,static_file
-from AlphaBot import AlphaBot
-from PCA9685 import PCA9685
 import RPi.GPIO as GPIO
 import threading
 import socket #ip
@@ -13,6 +11,9 @@ import os
 import math
 import signal
 import sys
+
+from alphabot_driver.AlphaBot import AlphaBot 
+from alphabot_driver.PCA9685 import PCA9685
 
 # ROS initialization
 rospy.init_node('robot_controller', anonymous=True)
